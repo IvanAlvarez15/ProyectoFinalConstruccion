@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'PAS/documentation.css' %}">
+  
+    
+</head>
+
+<body>
+  <h1 id="door-of-drums-api">Door-of-drums API</h1>
+  <h2 id="introduction">Introduction</h2>
+  <p>Welcome to the Door-of-drums API. You can use our API to access Door-of-drums API endpoints, which can get
+    information on the songs that are used in the game, the user info and the records of the users.</p>
+  <h2 id="user">User</h2>
+  <h3 id="get-user-info">Get user info</h3>
+  <p>This endpoint retrieves all the info from all users.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>GET http://doors-of-drums.games:8080/api/users.json</code></p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <pre><code class="lang-json">{
+      <span class="hljs-attr">"Users"</span>: [
+        {
+          <span class="hljs-attr">"username"</span>: <span class="hljs-string">"neto"</span>,
+          <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Spain"</span>,
+        },
+        {
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"sofi"</span>,
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"China"</span>,
+        },
+        {
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"ivan"</span>,
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Spain"</span>,
+        }
+      ]
+    }
+    </code></pre>
+
+  <h2 id="records">Records</h2>
+  <h3 id="get-all-records">Get all records</h3>
+  <p>This endpoint retrieves the records from all users.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>GET http://doors-of-drums.games:8080/api/dashboard.json/</code></p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <pre><code class="lang-json">{
+      <span class="hljs-attr">"Users"</span>: {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"500"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">40</span>,      
+      },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"25"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">10</span>,
+        },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"1258"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">60</span>,
+        },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"630"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">80</span>,
+        },
+    }
+    </code></pre>
+
+  <h2 id="records">Unity user info</h2>
+  <h3 id="get-all-records">Get the data from the server to the game.</h3>
+  <p>This endpoint retrieves the information of the player from the web so they can access the game.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/api/private/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>You need to be register in our web so you can access the game.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <pre><code class="lang-json">{
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"status"</span>: <span class="hljs-string">"1"</span>,    
+      }
+  </code></pre>
+
+  <h2 id="records">Deleate the user</h2>
+  <h3 id="get-all-records">Get the data of an specific user.</h3>
+  <p>This endpoint redirects to a confirmation page so the user can deleate their info.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/Borrar/id</code></p>
+  <p>Where <strong>id</strong> is the id of the user</p>
+  <h4 id="data-params">Data Params</h4>
+  <p>To use this endpoint you need to be logged in in the website.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <p>This will redirect to the a page of confirmation where the user can delete their info.</p>
+
+  <h2 id="records">Unity points info</h2>
+  <h3 id="get-all-records">Get the data from the server to the game.</h3>
+  <p>This endpoint retrieves the information of the player from the web so they can access the game.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/Puntajes/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>You need to be in the game so the endpoint can be use.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <pre><code class="lang-json">{
+          <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+          <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"500"</span>,
+          <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+          <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">40</span>,      
+          <span class="hljs-attr">"ID_Canciones"</span>: <span class="hljs-string">1</span>,      
+          <span class="hljs-attr">"ID_Usuario"</span>: <span class="hljs-string">1</span>,      
+      }
+  </code></pre>
+  
+  <h2 id="records">Username and hashed password for unity</h2>
+  <h3 id="get-all-records">Get the info of the user so they that access the game.</h3>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/LoginUnity/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>You need to be in the game and register so the endpoint can be use.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <p>This will redirect to the the menu scene of the game.</p>
+
+  <h2 id="records">Deleate user info in unity</h2>
+  <h3 id="get-all-records">Get the info of the user so it can be deleated in unity.</h3>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/BorrarUnity/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>You need to be in the game and register so the endpoint can be use.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <p>This will deleate all the user info in our database.</p>
+  
+  <h2 id="records">Higher level of the player</h2>
+  <h3 id="get-all-records">Get the higher level of the player.</h3>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/NivelAlto/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>You need to be in the game and register so the endpoint can be use.</p>
+  <h4 id="result-of-this-query">Result of this query</h4>
+  <pre><code class="lang-json">[
+            <span class="hljs-attr">"2.0"</span>,
+        ]
+    </code></pre>
+
+</body>
+
+</html>
