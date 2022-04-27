@@ -258,7 +258,7 @@ def Borrar(request, id):#Ya quedo
         temp_user = User.objects.get(id = id)
         return render(request, 'users/Borrar.html', {"user":temp_user})
     else:
-        return render(request, 'index', {})
+        return render(request, 'users/index.html', {})
 
 def Sobrejuego(request):
     return render(request, 'users/about-game.html', {})
