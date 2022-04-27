@@ -6,6 +6,8 @@ body{
 h2{
     color:rgb(236, 18, 18);
     margin-top: 30px;
+    font-size: x-large;
+
 }
 pre{
     margin: 40px 0;
@@ -13,10 +15,14 @@ pre{
 h4{
     color:rgb(27, 54, 162);
     margin-top: 30px;
+    font-size: x-large;
+
 }
 h3{
     color: rgb(255, 102, 0);
     margin-top: 30px;
+    font-size: x-large;
+
 }
 table{
     margin: 0 auto;
@@ -28,4 +34,9 @@ td, th{
 }
 h1{
     margin-top: 30px;
+    font-size: x-large;
+
+}
+p{
+    font-size: x-large;
 }
